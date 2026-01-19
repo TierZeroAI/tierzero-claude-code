@@ -1,0 +1,26 @@
+{
+  "name": "tierzero",
+  "owner": {
+    "name": "TierZero",
+    "email": "support@tierzero.ai"
+  },
+  "metadata": {
+    "description": "TierZero plugins for production context and incident investigation",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "tierzero",
+      "source": "./plugins/tierzero",
+      "description": "Access production telemetry through TierZero's unified API",
+      "version": "1.0.0",
+      "author": {
+        "name": "TierZero"
+      },
+      "homepage": "https://docs.tierzero.ai/references/mcp-server",
+      "repository": "https://github.com/TierZeroAI/tierzero-claude-code",
+      "license": "MIT",
+      "keywords": ["observability", "debugging", "incident-response", "telemetry"]
+    }
+  ]
+}

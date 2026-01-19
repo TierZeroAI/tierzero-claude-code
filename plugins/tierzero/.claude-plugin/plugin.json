@@ -1,0 +1,15 @@
+{
+  "name": "tierzero",
+  "description": "Access production telemetry through TierZero's unified API",
+  "version": "1.0.0",
+  "commands": ["./commands/"],
+  "mcpServers": {
+    "tierzero": {
+      "type": "http",
+      "url": "https://api.tierzero.ai/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${TIERZERO_PAT_TOKEN}"
+      }
+    }
+  }
+}
