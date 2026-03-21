@@ -9,26 +9,42 @@ arguments:
     required: true
 ---
 
-Use the Bash tool to call the TierZero MCP server directly via curl, running in the background.
+# TierZero: Production Telemetry Skill
 
-**Requirements:**
-- Set `run_in_background: true`
-- Use curl to POST to the MCP endpoint
-- Include both JSON and SSE Accept headers
+Query production telemetry data through TierZero's API to inform debugging, incident investigation, feature design, and code review.
 
-Example Bash tool call:
+## Prerequisites
 
-```json
-{
-  "command": "curl -s -N -X POST \"https://api.tierzero.ai/mcp/\" -H \"Authorization: Bearer $TIERZERO_PAT_TOKEN\" -H \"Content-Type: application/json\" -H \"Accept: application/json, text/event-stream\" -d '{\"jsonrpc\":\"2.0\",\"method\":\"tools/call\",\"params\":{\"name\":\"tierzero_ask\",\"arguments\":{\"query\":\"<USER_QUERY_HERE>\"}},\"id\":1}'",
-  "description": "Query TierZero: <brief description>",
-  "run_in_background": true
-}
+- `TIERZERO_PAT_TOKEN` environment variable must be set
+- `curl` and `jq` must be available
+
+## How to Execute
+
+Run the query script in the background using the Bash tool:
+
+```
+bash plugins/tierzero/skills/tierzero/scripts/tierzero_ask.sh '<QUERY>'
 ```
 
-Replace `<USER_QUERY_HERE>` with the user's actual query (properly JSON escaped - escape quotes and backslashes).
+**Always set `run_in_background: true`** so the user is not blocked while waiting for results.
 
-After spawning, tell the user:
-- The query is running in the background
+### Approval-Friendly Prefixes
+
+The following command prefixes are used by this skill:
+
+```
+bash plugins/tierzero/skills/tierzero/scripts/tierzero_ask.sh
+```
+
+## After Execution
+
+- Tell the user the query is running in the background
 - They can use `/tasks` to check status
-- They'll be notified when it completes
+- They will be notified when it completes
+- Once results arrive, summarize the findings and apply them to the current task
+
+## Error Handling
+
+- If `TIERZERO_PAT_TOKEN` is not set, the script will exit with an error message directing the user to https://app.tierzero.ai/settings/tokens
+- If the query is empty, the script will exit with a usage hint
+- If the API returns an error, surface the error message to the user
