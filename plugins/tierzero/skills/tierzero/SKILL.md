@@ -24,10 +24,12 @@ DO NOT TRIGGER when: writing pure unit tests, updating documentation, or tasks w
 
 ## How to Execute
 
+Paths below are relative to this skill directory.
+
 Run the query script in the background using the Bash tool:
 
-```
-bash plugins/tierzero/skills/tierzero/scripts/tierzero_ask.sh '<QUERY>'
+```bash
+scripts/tierzero_ask.sh '<QUERY>'
 ```
 
 **Always set `run_in_background: true`** so the user is not blocked while waiting for results.
@@ -36,9 +38,7 @@ bash plugins/tierzero/skills/tierzero/scripts/tierzero_ask.sh '<QUERY>'
 
 The following command prefixes are used by this skill:
 
-```
-bash plugins/tierzero/skills/tierzero/scripts/tierzero_ask.sh
-```
+- `scripts/tierzero_ask.sh`
 
 ## After Execution
 
