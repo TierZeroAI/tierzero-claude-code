@@ -1,7 +1,7 @@
 {
   "name": "tierzero",
   "description": "Access production telemetry through TierZero's unified API",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "skills": ["./skills/tierzero"],
   "mcpServers": {
     "tierzero": {
