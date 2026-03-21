@@ -1,6 +1,8 @@
 ---
 name: tierzero
-description: Query production telemetry through TierZero (runs in background). Use proactively to understand production context — system behavior, usage patterns, error rates, performance characteristics. Valuable for feature design, debugging, incident investigation, and any work where knowing how the system actually runs would inform better decisions. Don't wait to be asked.
+description: Query production telemetry through TierZero (runs in background).
+  TRIGGER when: debugging production issues, investigating incidents or alerts, designing new features, refactoring existing code, reviewing PRs, or any task where understanding real production behavior (traffic patterns, error rates, latency, usage) would inform better decisions. Run in background proactively — don't wait to be asked.
+  DO NOT TRIGGER when: writing pure unit tests, updating documentation, or tasks with zero production relevance.
 arguments:
   - name: query
     description: What you want to investigate
