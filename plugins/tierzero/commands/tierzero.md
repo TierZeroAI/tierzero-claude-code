@@ -1,6 +1,6 @@
 ---
 name: tierzero
-description: Query production telemetry through TierZero (runs in background)
+description: Query production telemetry through TierZero (runs in background). Use proactively whenever production context would help — debugging, investigating issues, triaging alerts, understanding system behavior. Don't wait to be asked.
 arguments:
   - name: query
     description: What you want to investigate
