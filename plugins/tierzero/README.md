@@ -1,25 +1,39 @@
 # TierZero Plugin
 
-Access production telemetry through TierZero's unified API.
+Access production telemetry through TierZero's MCP server.
 
 ## Requirements
 
-- A TierZero account with connected integrations
-- `TIERZERO_PAT_TOKEN` environment variable set
+A TierZero account with at least one integration connected (Datadog, New Relic, CloudWatch, Grafana Cloud, Sentry, GitHub, BuildKite, Temporal, Confluence, Notion, Slack, etc.).
 
-Get your token from: https://auth.tierzero.ai/account/api_keys/
+## Authentication
+
+OAuth — no tokens, no env vars. On first use Claude Code prompts you to authorize the `tierzero` MCP server in a browser. Log in, consent, done. The token persists in Claude Code.
+
+To re-authorize or revoke, run `/mcp` and manage the `tierzero` server.
 
 ## Usage
 
-### `/tierzero` Command (Recommended)
+### Run an investigation
 
-Run investigations in the background so you can continue working:
+Just ask:
 
 ```
-/tierzero What errors occurred in payment-service in the last hour?
+What errors occurred in payment-service in the last hour?
 ```
 
-The investigation runs in the background. Use `/tasks` to check status.
+The agent calls the `tierzero_ask` MCP tool and summarizes the result.
+
+### Load saved context
+
+Paste a TierZero URL or artifact UUID into the chat:
+
+```
+https://app.tierzero.ai/investigations/SW52ZXN0...
+bf904904-afdc-4cf2-94d8-76a4a8bb4f75
+```
+
+The `tierzero-fetch` skill triggers automatically.
 
 ## Capabilities
 

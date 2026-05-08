@@ -1,20 +1,20 @@
 {
   "name": "tierzero",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "owner": {
     "name": "TierZero",
     "email": "support@tierzero.ai"
   },
   "metadata": {
-    "description": "TierZero AI agents automate incident remediation, alert investigation, engineering support tickets, and more.",
+    "description": "Agentic production engineering for SWE, SRE and DevOps. Resolve and investigate issues against existing observability, CI/CD, and self-improving knowledge bases.",
     "pluginRoot": "./plugins"
   },
   "plugins": [
     {
       "name": "tierzero",
       "source": "./plugins/tierzero",
-      "description": "TierZero AI agents automate incident remediation, alert investigation, engineering support tickets, and more.",
-      "version": "1.1.2",
+      "description": "Agentic production engineering for SWE, SRE and DevOps. Resolve and investigate issues against existing observability, CI/CD, and self-improving knowledge bases.",
+      "version": "1.2.0",
       "author": {
         "name": "TierZero",
         "email": "support@tierzero.ai"
