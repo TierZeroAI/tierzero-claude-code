@@ -1,7 +1,7 @@
 {
   "name": "tierzero",
   "description": "Agentic production engineering for SWE, SRE and DevOps. Resolve and investigate issues against existing observability, CI/CD, and self-improving knowledge bases.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "skills": ["./skills/tierzero-investigate", "./skills/tierzero-fetch"],
   "mcpServers": {
     "tierzero": {

@@ -10,6 +10,8 @@ arguments:
     required: false
 allowed-tools:
   - tierzero_fetch_context
+  - Bash(open:*)
+  - Bash(xdg-open:*)
 triggers:
   - app\.tierzero\.ai/(chat|investigations)
   - (tierzero|t0|tz|tzero).?fetch
@@ -51,4 +53,13 @@ Only include source metadata if the user explicitly asks for it (and call with `
 
 ## Authentication
 
-OAuth is automatic. If a tool call fails with an authentication error, run `/mcp` and re-authorize the `tierzero` server.
+OAuth is automatic.
+
+**If an authorization URL surfaces** (because the user hasn't authed yet, or the token expired), do NOT print the URL and ask the user to copy it. Claude Code's terminal wraps long URLs across multiple lines, splicing newlines into the copied text and breaking the paste. Instead, run it through the system browser opener:
+
+- macOS: `open '<authorization_url>'`
+- Linux: `xdg-open '<authorization_url>'`
+
+Quote the URL — the OAuth params contain `&` and `=` which the shell will mangle without quotes. After running, tell the user "Browser opened — log in to TierZero and consent. The MCP server will reconnect automatically once auth completes."
+
+If a tool call fails with an authentication error and you don't have an auth URL in hand, tell the user to run `/mcp` and re-authorize the `tierzero` server.

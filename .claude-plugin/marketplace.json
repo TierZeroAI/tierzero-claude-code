@@ -1,6 +1,6 @@
 {
   "name": "tierzero",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "owner": {
     "name": "TierZero",
     "email": "support@tierzero.ai"
@@ -14,7 +14,7 @@
       "name": "tierzero",
       "source": "./plugins/tierzero",
       "description": "Agentic production engineering for SWE, SRE and DevOps. Resolve and investigate issues against existing observability, CI/CD, and self-improving knowledge bases.",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "author": {
         "name": "TierZero",
         "email": "support@tierzero.ai"
