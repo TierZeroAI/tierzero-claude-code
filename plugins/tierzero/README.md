@@ -35,10 +35,20 @@ bf904904-afdc-4cf2-94d8-76a4a8bb4f75
 
 The `tierzero-fetch` skill triggers automatically.
 
+### Teach a fact
+
+Tell the agent to save durable knowledge:
+
+```
+Remember that payment-service uses a connection pool of 20 to postgres-primary.
+```
+
+The `tierzero-teach` skill calls `tierzero_save_snippet` and confirms the outcome. Saved snippets are shared with the whole team and surfaced in future TierZero investigations.
+
 ## Capabilities
 
-Query your production telemetry data including:
-- Logs, metrics, traces from Datadog, New Relic, CloudWatch, Grafana Cloud, Sentry
+- Query logs, metrics, traces from Datadog, New Relic, CloudWatch, Grafana Cloud, Sentry
 - CI/CD data from BuildKite, GitHub Actions
 - Documentation from Confluence, Notion, Slack
 - Workflow data from Temporal
+- Save durable knowledge (facts, best practices) to the Context Engine

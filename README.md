@@ -37,11 +37,18 @@ https://app.tierzero.ai/investigations/SW52ZXN0...
 bf904904-afdc-4cf2-94d8-76a4a8bb4f75
 ```
 
+To teach TierZero a fact for the whole team:
+
+```
+Remember that payment-service uses a connection pool of 20 to postgres-primary.
+```
+
 **Capabilities:**
 - Query logs, metrics, traces, and spans from connected integrations (Datadog, New Relic, CloudWatch, Grafana Cloud, Sentry)
 - Analyze code repositories and CI/CD pipelines (GitHub, BuildKite, GitHub Actions)
 - Inspect workflow executions (Temporal)
 - Search knowledge bases (Confluence, Notion, Slack)
+- Save durable knowledge (facts, best practices) to the Context Engine
 
 ## Documentation
 
